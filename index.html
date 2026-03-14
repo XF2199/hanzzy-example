@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Suki - Special from Sila ❤️</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #000;
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        /* Stars background */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .star {
+            position: absolute;
+            background: #fff;
+            border-radius: 50%;
+            animation: twinkle var(--duration) infinite;
+            opacity: var(--opacity);
+            width: var(--size);
+            height: var(--size);
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: var(--opacity); }
+            50% { opacity: 1; }
+        }
+
+        /* Running text */
+        .marquee-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(90deg, transparent, #ff4d7e, #ff9f4d, #ff4d7e, transparent);
+            padding: 12px 0;
+            z-index: 1000;
+            overflow: hidden;
+            box-shadow: 0 0 30px rgba(255, 77, 126, 0.5);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            backdrop-filter: blur(5px);
+        }
+
+        .marquee {
+            display: inline-block;
+            white-space: nowrap;
+            animation: marquee 20s linear infinite;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: transparent;
+            background: linear-gradient(45deg, #fff, #ffe6f0, #fff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            text-shadow: 0 0 15px #ff4d7e;
+            letter-spacing: 2px;
+            font-family: 'Dancing Script', cursive;
+        }
+
+        .marquee span {
+            display: inline-block;
+            padding-left: 40px;
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* Main container */
+        .container {
+            max-width: 1200px;
+            margin: 120px auto 50px;
+            padding: 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Header */
+        .birthday-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .birthday-header h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4.5rem;
+            background: linear-gradient(135deg, #ff4d7e, #ff9f4d);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 10px;
+            animation: glow 3s infinite;
+            text-shadow: 0 0 20px rgba(255,77,126,0.3);
+        }
+
+        .birthday-header h2 {
+            font-size: 2rem;
+            font-weight: 300;
+            color: rgba(255,255,255,0.9);
+            letter-spacing: 2px;
+            background: linear-gradient(135deg, #ff4d7e, #ff9f4d);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+            padding: 5px 20px;
+            border-radius: 50px;
+            border: 2px solid #ff4d7e;
+        }
+
+        @keyframes glow {
+            0%, 100% { filter: drop-shadow(0 0 20px #ff4d7e); }
+            50% { filter: drop-shadow(0 0 40px #ff9f4d); }
+        }
+
+        /* Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .photo-card {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            aspect-ratio: 3/4;
+            border: 3px solid rgba(255,77,126,0.3);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.6);
+            transition: all 0.4s ease;
+            cursor: pointer;
+            background: #1a1a1a;
+        }
+
+        .photo-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: #ff4d7e;
+            box-shadow: 0 20px 30px rgba(255,77,126,0.4);
+        }
+
+        .photo-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s ease;
+        }
+
+        .photo-card:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Surprise button section */
+        .surprise-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 60px 0 40px 0;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .surprise-btn {
+            background: linear-gradient(135deg, #ff4d7e, #ff9f4d);
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            padding: 20px 50px;
+            border: none;
+            border-radius: 60px;
+            cursor: pointer;
+            box-shadow: 0 0 30px rgba(255,77,126,0.5);
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: 2px;
+            border: 3px solid rgba(255,255,255,0.3);
+            margin: 20px 0;
+        }
+
+        .surprise-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 50px rgba(255,159,77,0.8);
+            border-color: white;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 30px rgba(255,77,126,0.5); }
+            50% { transform: scale(1.05); box-shadow: 0 0 50px rgba(255,159,77,0.8); }
+            100% { transform: scale(1); box-shadow: 0 0 30px rgba(255,77,126,0.5); }
+        }
+
+        /* Surprise image */
+        .surprise-image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px auto;
+            max-width: 500px;
+            width: 100%;
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+            pointer-events: none;
+        }
+
+        .surprise-image-container.show {
+            opacity: 1;
+            transform: scale(1);
+            pointer-events: auto;
+        }
+
+        .surprise-image {
+            width: 100%;
+            border-radius: 30px;
+            border: 5px solid #ff4d7e;
+            box-shadow: 0 0 50px rgba(255,77,126,0.7);
+            animation: glowImage 2s infinite;
+        }
+
+        @keyframes glowImage {
+            0%, 100% { box-shadow: 0 0 30px rgba(255,77,126,0.7); }
+            50% { box-shadow: 0 0 60px rgba(255,159,77,0.9); }
+        }
+
+        /* Close button for surprise image */
+        .close-btn {
+            background: rgba(255,77,126,0.8);
+            color: white;
+            border: 2px solid white;
+            font-size: 1.2rem;
+            padding: 8px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: all 0.3s;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        .close-btn:hover {
+            background: #ff4d7e;
+            transform: scale(1.05);
+        }
+
+        /* Message cards */
+        .messages {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            margin: 50px 0;
+        }
+
+        .message-card {
+            background: rgba(255,255,255,0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,77,126,0.2);
+            border-radius: 20px;
+            padding: 30px;
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .message-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(180deg, #ff4d7e, #ff9f4d);
+            transition: width 0.3s;
+        }
+
+        .message-card:hover {
+            transform: translateX(10px);
+            border-color: #ff4d7e;
+            box-shadow: 0 10px 25px rgba(255,77,126,0.3);
+        }
+
+        .message-card:hover::before {
+            width: 8px;
+        }
+
+        .message-card p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .message-card .message-from {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.5);
+            text-align: right;
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        .special-message {
+            font-size: 1.6rem !important;
+            font-weight: 600;
+            background: linear-gradient(135deg, #ff4d7e, #ff9f4d);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-align: center;
+            padding: 15px 0;
+            border-top: 2px dashed #ff4d7e;
+            border-bottom: 2px dashed #ff4d7e;
+            margin: 15px 0;
+        }
+
+        .signature {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            text-align: right;
+            background: linear-gradient(135deg, #ff4d7e, #ff9f4d);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        /* Music status indicator */
+        .music-status {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(0,0,0,0.7);
+            backdrop-filter: blur(5px);
+            padding: 8px 15px;
+            border-radius: 50px;
+            border: 1px solid #ff4d7e;
+            color: white;
+            font-size: 0.9rem;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .music-status .dot {
+            width: 10px;
+            height: 10px;
+            background: #ff4d7e;
+            border-radius: 50%;
+            animation: pulseDot 1.5s infinite;
+        }
+
+        @keyframes pulseDot {
+            0%, 100% { opacity: 0.5; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); background: #ff9f4d; }
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px;
+            font-size: 1rem;
+            color: rgba(255,255,255,0.5);
+            border-top: 1px solid rgba(255,77,126,0.2);
+            margin-top: 40px;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+            
+            .birthday-header h1 { font-size: 3.5rem; }
+            .birthday-header h2 { font-size: 1.5rem; }
+            
+            .surprise-btn {
+                font-size: 1.2rem;
+                padding: 15px 30px;
+            }
+            
+            .message-card p { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Stars background -->
+    <div class="stars" id="stars"></div>
+
+    <!-- Running text -->
+    <div class="marquee-container">
+        <div class="marquee">
+            <span>🎂 HAPPY BIRTHDAY SUKI FROM SILA ❤️ 26 MARET 🎂 HAPPY BIRTHDAY SUKI FROM SILA ❤️ 26 MARET 🎂</span>
+            <span>🎂 HAPPY BIRTHDAY SUKI FROM SILA ❤️ 26 MARET 🎂 HAPPY BIRTHDAY SUKI FROM SILA ❤️ 26 MARET 🎂</span>
+        </div>
+    </div>
+
+    <!-- Music status indicator -->
+    <div class="music-status" id="musicStatus">
+        <span class="dot"></span>
+        <span id="musicStatusText">Musik siap diputar</span>
+    </div>
+
+    <!-- Main content -->
+    <div class="container">
+        <!-- Header -->
+        <div class="birthday-header">
+            <h1>Happy Birthday Suki!</h1>
+            <h2>❤️ 26 MARET ❤️</h2>
+        </div>
+
+        <!-- Photo gallery with updated images - FOTO 1 DIGANTI -->
+        <div class="gallery">
+            <div class="photo-card">
+                <img src="https://files.catbox.moe/mdxd3r.jpg" alt="Suki 1" onerror="this.onerror=null; this.src='https://via.placeholder.com/600x800/ff4d7e/ffffff?text=Foto+1+Suki'">
+            </div>
+            <div class="photo-card">
+                <img src="https://files.catbox.moe/5855uy.jpg" alt="Suki 2" onerror="this.onerror=null; this.src='https://via.placeholder.com/600x800/ff9f4d/ffffff?text=Foto+2+Suki'">
+            </div>
+            <div class="photo-card">
+                <img src="https://files.catbox.moe/mh4a0k.jpg" alt="Suki 3" onerror="this.onerror=null; this.src='https://via.placeholder.com/600x800/ff6b6b/ffffff?text=Foto+3+Suki'">
+            </div>
+        </div>
+
+        <!-- Surprise button section -->
+        <div class="surprise-section">
+            <button class="surprise-btn" id="surpriseBtn">
+                🎁 KLIK UNTUK KEJUTAN! 🎁
+            </button>
+            
+            <!-- Surprise image container (hidden initially) -->
+            <div class="surprise-image-container" id="surpriseImageContainer">
+                <div style="text-align: center; width: 100%;">
+                    <img src="https://files.catbox.moe/rmm6lc.jpg" alt="Surprise Image" class="surprise-image" id="surpriseImage">
+                    <br>
+                    <button class="close-btn" id="closeSurpriseBtn">Tutup ✕</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Message cards with exact text from chat -->
+        <div class="messages">
+            <!-- Message 1 from sila -->
+            <div class="message-card">
+                <p>SUKI HAPPY BIRTHDAY yahhhhh!!!!! Semoga apa yang kmu pengen apa yg kamu rencanain apa yang lagi kamu jalanin dilancarkan dan dimudah Selamat Tambah Tua, sehat selaluuuu semoga bisa jadi TNI dan yg penting bahagia terus iaaaa suki!! Wishing you a day full of laughter, love, and everything you've been hoping for! U deserve better than u thinkkk</p>
+                <div class="message-from">— sila ❤️</div>
+            </div>
+            
+            <!-- Message 2 from sila -->
+            <div class="message-card">
+                <p>"Since today is all about celebrating and remembering how precious and special you are, we want to thank you for all the laughter and kindness you bring, now and forever!"</p>
+                <div class="message-from">— sila ❤️</div>
+            </div>
+            
+            <!-- Message 3 from sila -->
+            <div class="message-card">
+                <p>Harapan kita ke suki bukan cuma kata-kata, tapi juga do'a terbaik.</p>
+                <p class="special-message">BAHAGIA TERUS IAA MAKASIH UDAH JADI ORANG BAIK, HIDUP LEBIH LAMA LAGI ☝🏻☺️☺️🥰🥰🥰🥰🥰🥰</p>
+                <div class="signature">From Sila with love ❤️</div>
+                <div class="message-from">— sila 🥰</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Made with infinite love for Suki | Happy Birthday 26 Maret!</p>
+    </footer>
+
+    <!-- Audio element (hidden) -->
+    <audio id="birthdayMusic" loop preload="auto">
+        <source src="https://files.catbox.moe/75zngn.mp3" type="audio/mpeg">
+        <source src="https://files.catbox.moe/75zngn.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        // Create stars
+        function createStars() {
+            const starsContainer = document.getElementById('stars');
+            const starCount = 150;
+            for (let i = 0; i < starCount; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                const left = Math.random() * 100;
+                const top = Math.random() * 100;
+                const size = Math.random() * 3 + 1;
+                const opacity = Math.random() * 0.7 + 0.3;
+                const duration = Math.random() * 3 + 2;
+                star.style.left = left + '%';
+                star.style.top = top + '%';
+                star.style.setProperty('--size', size + 'px');
+                star.style.setProperty('--opacity', opacity);
+                star.style.setProperty('--duration', duration + 's');
+                starsContainer.appendChild(star);
+            }
+        }
+
+        // Music control
+        const music = document.getElementById('birthdayMusic');
+        const musicStatus = document.getElementById('musicStatus');
+        const musicStatusText = document.getElementById('musicStatusText');
+        let musicStarted = false;
+        let musicFailed = false;
+
+        // Cek apakah musik bisa diputar
+        music.addEventListener('error', function(e) {
+            console.error('Music failed to load:', e);
+            musicStatusText.innerText = '🎵 Klik untuk putar musik';
+            musicFailed = true;
+        });
+
+        music.addEventListener('canplay', function() {
+            console.log('Music can play now');
+            musicStatusText.innerText = '🎵 Klik di halaman untuk putar musik';
+        });
+
+        function startMusic() {
+            if (musicStarted || musicFailed) return;
+            
+            console.log('Attempting to start music...');
+            
+            // Set volume ke 40% (lebih nyaman)
+            music.volume = 0.4;
+            
+            // Coba putar musik
+            let playPromise = music.play();
+            
+            if (playPromise !== undefined) {
+                playPromise.then(() => {
+                    musicStarted = true;
+                    musicStatusText.innerText = '🎵 Musik sedang diputar';
+                    console.log('Music started successfully');
+                }).catch(error => {
+                    console.log('Music autoplay failed:', error);
+                    musicStatusText.innerText = '🎵 Klik di halaman untuk putar musik';
+                });
+            }
+        }
+
+        // Coba mulai musik saat halaman dimuat
+        window.addEventListener('load', function() {
+            setTimeout(startMusic, 1000);
+        });
+
+        // Mulai musik saat user klik di mana saja
+        document.addEventListener('click', function() {
+            if (!musicStarted && !musicFailed) {
+                music.play().then(() => {
+                    musicStarted = true;
+                    musicStatusText.innerText = '🎵 Musik sedang diputar';
+                }).catch(e => console.log('Click play failed:', e));
+            }
+        }, { once: true });
+
+        // Juga coba saat scroll
+        window.addEventListener('scroll', function() {
+            if (!musicStarted && !musicFailed) {
+                music.play().then(() => {
+                    musicStarted = true;
+                    musicStatusText.innerText = '🎵 Musik sedang diputar';
+                }).catch(e => console.log('Scroll play failed:', e));
+            }
+        }, { once: true });
+
+        // Surprise button functionality
+        const surpriseBtn = document.getElementById('surpriseBtn');
+        const surpriseContainer = document.getElementById('surpriseImageContainer');
+        const closeBtn = document.getElementById('closeSurpriseBtn');
+
+        surpriseBtn.addEventListener('click', function() {
+            // Tampilkan gambar kejutan dengan animasi
+            surpriseContainer.classList.add('show');
+            
+            // Buat confetti sederhana
+            confettiEffect();
+        });
+
+        closeBtn.addEventListener('click', function() {
+            // Sembunyikan gambar kejutan
+            surpriseContainer.classList.remove('show');
+        });
+
+        // Klik di luar gambar untuk menutup
+        surpriseContainer.addEventListener('click', function(e) {
+            if (e.target === surpriseContainer) {
+                surpriseContainer.classList.remove('show');
+            }
+        });
+
+        // Simple confetti effect
+        function confettiEffect() {
+            const canvas = document.createElement('canvas');
+            canvas.style.position = 'fixed';
+            canvas.style.top = 0;
+            canvas.style.left = 0;
+            canvas.style.width = '100%';
+            canvas.style.height = '100%';
+            canvas.style.pointerEvents = 'none';
+            canvas.style.zIndex = 9999;
+            document.body.appendChild(canvas);
+
+            const ctx = canvas.getContext('2d');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            const particles = [];
+            const colors = ['#ff4d7e', '#ff9f4d', '#ffd700', '#ff6b6b', '#ffffff'];
+
+            for (let i = 0; i < 150; i++) {
+                particles.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height - canvas.height,
+                    size: Math.random() * 8 + 2,
+                    color: colors[Math.floor(Math.random() * colors.length)],
+                    speedY: Math.random() * 8 + 4,
+                    speedX: (Math.random() - 0.5) * 3,
+                });
+            }
+
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                let alive = false;
+                for (let p of particles) {
+                    p.y += p.speedY;
+                    p.x += p.speedX;
+                    if (p.y < canvas.height) alive = true;
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                    ctx.fillStyle = p.color;
+                    ctx.fill();
+                }
+                if (alive) {
+                    requestAnimationFrame(animate);
+                } else {
+                    document.body.removeChild(canvas);
+                }
+            }
+            animate();
+        }
+
+        // Animation on scroll for message cards
+        const cards = document.querySelectorAll('.message-card');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateX(0)';
+                }
+            });
+        }, { threshold: 0.2 });
+
+        cards.forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateX(-20px)';
+            card.style.transition = 'all 0.6s ease';
+            observer.observe(card);
+        });
+
+        // Preload images to ensure they appear - UPDATE with new image
+        const images = [
+            'https://files.catbox.moe/mdxd3r.jpg',
+            'https://files.catbox.moe/5855uy.jpg',
+            'https://files.catbox.moe/mh4a0k.jpg',
+            'https://files.catbox.moe/rmm6lc.jpg'
+        ];
+        
+        images.forEach(src => {
+            const img = new Image();
+            img.src = src;
+        });
+
+        // Initialize stars
+        createStars();
+    </script>
+</body>
+  </html>
